@@ -194,8 +194,14 @@ public class PoApplicationData {
         logger.info("{}",
                 String.format("= Session Buffer Size:: %d bytes", this.getSessionModifDec()));
         logger.info("{}", String.format("= Platform (Chip Type):: %s", this.getPlatform()));
-        logger.info("{}", String.format("= Issuer:: %s(%s)", this.getIssuerInfo().getName(),
-                this.getIssuerInfo().getValue()));
+
+        if (this.getIssuerInfo() != null) {
+            logger.info("{}", String.format("= Issuer:: %s(%s)", this.getIssuerInfo().getName(),
+                    this.getIssuerInfo().getValue()));
+        } else {
+            logger.info("= Issuer:: null");
+        }
+
         logger.info("{}",
                 String.format("= Software Version:: %s.%s", this.getVersion(), this.getRevision()));
         logger.info("{}", String.format("= Application Type:: %s", this.getApplicationType()));
