@@ -137,11 +137,10 @@ public class PoFileData {
                                 this.getAccessConditions().getGroup3().getKeyLevel(), false),
                         this.getDataRef()));
 
-        for (int i = 0; i < this.getRecordData().size(); i++) {
+        for (int i = 0; this.getRecordData() != null && i < this.getRecordData().size(); i++) {
             logger.info("{}", String.format("+ #%s:%s", this.getRecordData().get(i).getIndex(),
                     ByteArrayUtil.toHex(this.getRecordData().get(i).getValue())));
         }
-
     }
 
 }
