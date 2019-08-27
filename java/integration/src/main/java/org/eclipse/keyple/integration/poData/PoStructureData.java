@@ -74,6 +74,8 @@ public class PoStructureData {
 
             applicationData.print(logger);
         }
+        logger.info(
+                "========================================================================================================");
     }
 
     public byte[] getTraceability() {
